@@ -1,0 +1,1133 @@
+/* =========================================
+   GENERAL STYLING
+========================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #212529;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+    background: linear-gradient(
+        135deg,
+        #e9f2ff,
+        #f8f9fa
+    );
+
+    padding: 90px 20px;
+}
+
+
+/* CSS FLEXBOX */
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-image-container {
+    position: relative;
+}
+
+
+/* CSS FILTER */
+
+.profile-image {
+    width: 280px;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+
+    filter: saturate(1.2);
+}
+
+
+/* =========================================
+   ABSOLUTE POSITIONING
+========================================= */
+
+.online-badge {
+    position: absolute;
+
+    bottom: 15px;
+    right: 10px;
+
+    background: green;
+    color: white;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   PSEUDO ELEMENTS
+========================================= */
+
+.section-heading h2::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    background: #0d6efd;
+
+    margin: 12px auto;
+}
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.profile-card {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.1);
+
+    position: relative;
+}
+
+
+/* PSEUDO ELEMENT */
+
+.profile-card::before {
+    content: "PROFILE";
+
+    position: absolute;
+
+    top: -12px;
+    left: 25px;
+
+    background: #0d6efd;
+
+    color: white;
+
+    padding: 5px 15px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   SKILLS SECTION
+========================================= */
+
+.skills-section {
+    background: #f5f5f5;
+}
+
+
+/* =========================================
+   CSS FLEXBOX
+========================================= */
+
+.skills-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+.skill-box {
+    flex: 1 1 200px;
+
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* CSS EFFECT */
+
+.skill-box:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   PROJECT SECTION
+========================================= */
+
+.project-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+
+.project-card {
+    width: 30%;
+
+    min-width: 280px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+
+/* =========================================
+   PROJECT IMAGE
+========================================= */
+
+.project-image {
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+.project-image img {
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.project-image:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   CSS FILTER
+========================================= */
+
+.grayscale img {
+    filter: grayscale(100%);
+}
+
+.grayscale:hover img {
+    filter: grayscale(0%);
+}
+
+
+/* =========================================
+   BOOTSTRAP FLEX SECTION
+========================================= */
+
+.bootstrap-flex-section {
+    background: #f8f9fa;
+}
+
+
+.bootstrap-demo {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.flex-item {
+    background: #212529;
+
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 5px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   POSITIONING
+========================================= */
+
+.position-section {
+    background: #f5f5f5;
+}
+
+
+.position-card {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.featured-badge {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    background: #ffc107;
+
+    color: black;
+
+    padding: 6px 12px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+    background: white;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #212529;
+
+    color: white;
+
+    padding: 20px 0;
+}
+
+
+.footer p {
+    margin: 0;
+}
+
+
+/* =========================================
+   DISPLAY PROPERTIES
+========================================= */
+
+.display-section {
+    background: white;
+}
+
+
+.display-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.display-demo {
+    flex: 1 1 200px;
+
+    max-width: 260px;
+
+    background: #f8f9fa;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.display-demo h5 {
+    font-family: monospace;
+
+    font-size: 13px;
+
+    min-height: 32px;
+
+    margin-bottom: 15px;
+}
+
+
+.display-demo p {
+    font-size: 14px;
+
+    margin: 15px 0 0;
+
+    color: #495057;
+}
+
+
+.demo-box {
+    background: white;
+
+    border: 2px dashed #adb5bd;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    min-height: 95px;
+}
+
+
+.demo-box span {
+    background: #0d6efd;
+
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+}
+
+
+/* CSS DISPLAY VALUES */
+
+.demo-block .demo-box span {
+    display: block;
+
+    margin-bottom: 6px;
+}
+
+
+.demo-inline .demo-box span {
+    display: inline;
+}
+
+
+.demo-inline-block .demo-box span {
+    display: inline-block;
+
+    width: 70px;
+
+    text-align: center;
+
+    margin: 0 4px 6px 0;
+}
+
+
+.demo-flex .demo-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 6px;
+}
+
+
+.demo-none .demo-box span {
+    display: none;
+}
+
+
+/* =========================================
+   CSS FILTER EFFECTS
+========================================= */
+
+.filter-section {
+    background: #f5f5f5;
+}
+
+
+.filter-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.filter-item {
+    flex: 1 1 280px;
+
+    max-width: 340px;
+
+    margin: 0;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+}
+
+
+.filter-item img {
+    width: 100%;
+
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+
+.filter-item figcaption {
+    margin-top: 10px;
+
+    font-family: monospace;
+
+    font-size: 13px;
+}
+
+
+.filter-blur img {
+    filter: blur(2px);
+}
+
+.filter-grayscale img {
+    filter: grayscale(100%);
+}
+
+.filter-brightness img {
+    filter: brightness(80%);
+}
+
+.filter-contrast img {
+    filter: contrast(150%);
+}
+
+.filter-saturate img {
+    filter: saturate(200%);
+}
+
+
+/* =========================================
+   STICKY POSITIONING
+
+   position: sticky is applied by Bootstrap's
+   .sticky-top class on the navigation bar,
+   so no custom rule is needed here.
+========================================= */
+
+
+/* =========================================
+   FIXED POSITIONING
+========================================= */
+
+.back-to-top {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    z-index: 1030;
+
+    background: #0d6efd;
+
+    color: white;
+
+    padding: 14px 20px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.back-to-top:hover {
+    background: #0b5ed7;
+
+    color: white;
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    .project-card {
+        width: 100%;
+    }
+
+
+    .flex-item {
+        width: 100%;
+    }
+
+
+    .display-demo,
+    .filter-item {
+        max-width: 100%;
+    }
+
+
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+    }
+
+}
+
+
+/* =========================================
+   LAB 03 - ACADEMIC & SCHOLARSHIP SECTION
+========================================= */
+
+.academic-section {
+    background: #f8f9fa;
+}
+
+
+/* =========================================
+   ACADEMIC CARDS
+========================================= */
+
+.academic-grid {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.academic-card {
+    flex: 1 1 340px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 25px;
+}
+
+
+.academic-grid .academic-card {
+    margin-bottom: 0;
+}
+
+
+.academic-card h3 {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 3px solid #0d6efd;
+}
+
+
+.academic-card h4 {
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.card-note {
+    font-size: 14px;
+
+    color: #495057;
+
+    margin-top: -12px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   STUDENT PROFILE LIST
+========================================= */
+
+.data-list {
+    margin: 0;
+}
+
+
+.data-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: baseline;
+
+    gap: 15px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #f1f3f5;
+}
+
+
+.data-row:last-child {
+    border-bottom: none;
+}
+
+
+.data-row dt {
+    font-weight: normal;
+
+    color: #495057;
+
+    font-size: 14px;
+}
+
+
+.data-row dd {
+    margin: 0;
+
+    font-weight: bold;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   MARKS TABLE
+========================================= */
+
+.marks-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 15px;
+}
+
+
+.marks-table th,
+.marks-table td {
+    padding: 10px 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #f1f3f5;
+}
+
+
+.marks-table thead th {
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    color: #495057;
+}
+
+
+.marks-table td:nth-child(2),
+.marks-table td:nth-child(3),
+.marks-table th:nth-child(2),
+.marks-table th:nth-child(3) {
+    text-align: right;
+}
+
+
+.marks-table tfoot tr {
+    background: #f8f9fa;
+
+    font-weight: bold;
+}
+
+
+.marks-table tfoot td,
+.marks-table tfoot th {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   PERCENTAGE / GRADE / RESULT STRIP
+========================================= */
+
+.result-strip {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+.result-item {
+    flex: 1 1 100px;
+
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+
+.result-label {
+    display: block;
+
+    font-size: 13px;
+
+    color: #495057;
+
+    margin-bottom: 6px;
+}
+
+
+.result-value {
+    display: block;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+.result-passed {
+    color: #0f5132;
+}
+
+
+.result-failed {
+    color: #842029;
+}
+
+
+/* =========================================
+   STATUS BADGES
+
+   A text symbol is printed inside every badge,
+   so the meaning never depends on colour alone.
+========================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    margin-bottom: 15px;
+}
+
+
+.badge-gold {
+    background: #fff3cd;
+
+    color: #664d03;
+
+    border: 2px solid #ffc107;
+}
+
+
+.badge-silver {
+    background: #e9ecef;
+
+    color: #343a40;
+
+    border: 2px solid #adb5bd;
+}
+
+
+.badge-none {
+    background: #f8d7da;
+
+    color: #842029;
+
+    border: 2px solid #f1aeb5;
+}
+
+
+.badge-good {
+    background: #d1e7dd;
+
+    color: #0f5132;
+
+    border: 2px solid #75b798;
+}
+
+
+.badge-warning {
+    background: #fff3cd;
+
+    color: #664d03;
+
+    border: 2px solid #ffc107;
+}
+
+
+.badge-critical {
+    background: #f8d7da;
+
+    color: #842029;
+
+    border: 2px solid #dc3545;
+}
+
+
+/* =========================================
+   PLAIN TEXT REPORT
+========================================= */
+
+.report-output {
+    background: #212529;
+
+    color: #e9ecef;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   OPERATOR PANELS
+========================================= */
+
+.operator-grid {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+.operator-group {
+    flex: 1 1 260px;
+
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+
+.operator-group ul {
+    margin: 0;
+
+    padding-left: 18px;
+}
+
+
+.operator-group li {
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 8px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   LAB 03 RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .academic-card {
+        padding: 20px;
+    }
+
+
+    .report-output {
+        font-size: 12px;
+
+        padding: 15px;
+    }
+
+}
