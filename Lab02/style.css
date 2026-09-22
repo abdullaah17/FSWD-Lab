@@ -421,6 +421,259 @@ body {
 
 
 /* =========================================
+   DISPLAY PROPERTIES
+========================================= */
+
+.display-section {
+    background: white;
+}
+
+
+.display-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.display-demo {
+    flex: 1 1 200px;
+
+    max-width: 260px;
+
+    background: #f8f9fa;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.display-demo h5 {
+    font-family: monospace;
+
+    font-size: 13px;
+
+    min-height: 32px;
+
+    margin-bottom: 15px;
+}
+
+
+.display-demo p {
+    font-size: 14px;
+
+    margin: 15px 0 0;
+
+    color: #495057;
+}
+
+
+.demo-box {
+    background: white;
+
+    border: 2px dashed #adb5bd;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    min-height: 95px;
+}
+
+
+.demo-box span {
+    background: #0d6efd;
+
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+}
+
+
+/* CSS DISPLAY VALUES */
+
+.demo-block .demo-box span {
+    display: block;
+
+    margin-bottom: 6px;
+}
+
+
+.demo-inline .demo-box span {
+    display: inline;
+}
+
+
+.demo-inline-block .demo-box span {
+    display: inline-block;
+
+    width: 70px;
+
+    text-align: center;
+
+    margin: 0 4px 6px 0;
+}
+
+
+.demo-flex .demo-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 6px;
+}
+
+
+.demo-none .demo-box span {
+    display: none;
+}
+
+
+/* =========================================
+   CSS FILTER EFFECTS
+========================================= */
+
+.filter-section {
+    background: #f5f5f5;
+}
+
+
+.filter-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.filter-item {
+    flex: 1 1 280px;
+
+    max-width: 340px;
+
+    margin: 0;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+}
+
+
+.filter-item img {
+    width: 100%;
+
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+
+.filter-item figcaption {
+    margin-top: 10px;
+
+    font-family: monospace;
+
+    font-size: 13px;
+}
+
+
+.filter-blur img {
+    filter: blur(2px);
+}
+
+.filter-grayscale img {
+    filter: grayscale(100%);
+}
+
+.filter-brightness img {
+    filter: brightness(80%);
+}
+
+.filter-contrast img {
+    filter: contrast(150%);
+}
+
+.filter-saturate img {
+    filter: saturate(200%);
+}
+
+
+/* =========================================
+   STICKY POSITIONING
+
+   position: sticky is applied by Bootstrap's
+   .sticky-top class on the navigation bar,
+   so no custom rule is needed here.
+========================================= */
+
+
+/* =========================================
+   FIXED POSITIONING
+========================================= */
+
+.back-to-top {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    z-index: 1030;
+
+    background: #0d6efd;
+
+    color: white;
+
+    padding: 14px 20px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.back-to-top:hover {
+    background: #0b5ed7;
+
+    color: white;
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
    RESPONSIVE DESIGN
 ========================================= */
 
@@ -456,6 +709,18 @@ body {
 
     .flex-item {
         width: 100%;
+    }
+
+
+    .display-demo,
+    .filter-item {
+        max-width: 100%;
+    }
+
+
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
     }
 
 }
