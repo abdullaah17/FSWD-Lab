@@ -20,7 +20,7 @@
   </div>
 
   <script>
-    // 1. ES6 Class
+    // ES6 class
     class Student {
       constructor(name, rollNumber, department, semester, cgpa, marks) {
         this.name = name;
@@ -32,7 +32,7 @@
       }
     }
 
-    // Array of six Student objects
+    // making 6 objects from the class
     const students = [
       new Student("Ali", "BSCS-001", "Computer Science", 6, 3.45, 82),
       new Student("Ahmed", "BSCS-002", "Computer Science", 5, 2.8, 67),
@@ -42,7 +42,7 @@
       new Student("Ayesha", "BSAI-006", "Artificial Intelligence", 2, 2.4, 58)
     ];
 
-    // 2. Function: grade
+    // grade from marks
     function calculateGrade(marks) {
       if (marks >= 80) return "A";
       if (marks >= 70) return "B";
@@ -51,30 +51,33 @@
       return "F";
     }
 
-    // 3. Arrow function + ternary operator: academic status
+    // arrow function + ternary for status
     const getStatus = (cgpa) => cgpa >= 2.0 ? "Eligible" : "Academic Warning";
 
-    // 4. for...in: properties of one student object
+    // for...in loops over the keys of the first student
     let info = "<h5>Student Object (for...in)</h5>";
     for (const key in students[0]) {
       info += `${key}: ${students[0][key]}<br>`;
     }
     document.getElementById("info").innerHTML = info;
 
-    // 6. Array methods: push() and includes() + for...of
+    // departments array, push adds one more
     const departments = ["Computer Science", "Software Engineering", "Information Technology"];
     departments.push("Artificial Intelligence");
 
     let deptHtml = "<h5>Departments</h5>";
+    // for...of to show them
     for (const dept of departments) {
       deptHtml += `${dept}<br>`;
     }
+    // includes() checks if it is in the array
     deptHtml += `<br>Has Artificial Intelligence: ${departments.includes("Artificial Intelligence") ? "Yes" : "No"}`;
     document.getElementById("departments").innerHTML = deptHtml;
 
-    // 5 & 7. forEach + object destructuring: student cards
+    // cards for all students
     const container = document.getElementById("students");
     students.forEach((student) => {
+      // object destructuring
       const { name, rollNumber, department, semester, cgpa, marks } = student;
 
       container.innerHTML += `
@@ -92,7 +95,7 @@
         </div>`;
     });
 
-    // for loop: count passed students (marks >= 50)
+    // count passed students (50+ marks)
     let passed = 0;
     for (let i = 0; i < students.length; i++) {
       if (students[i].marks >= 50) {

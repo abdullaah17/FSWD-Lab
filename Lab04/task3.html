@@ -14,7 +14,7 @@
   </div>
 
   <script>
-    // Student records
+    // 5 students
     const students = [
       { name: "Sara", rollNumber: "BSCS-023", assignment: 18, midterm: 22, finalExam: 42 },
       { name: "Ali", rollNumber: "BSCS-001", assignment: 15, midterm: 20, finalExam: 38 },
@@ -23,15 +23,15 @@
       { name: "Usman", rollNumber: "BSCS-005", assignment: 8, midterm: 12, finalExam: 20 }
     ];
 
-    // Function: total marks
+    // total marks
     function calculateTotal(assignment, midterm, finalExam) {
       return assignment + midterm + finalExam;
     }
 
-    // Arrow function: average
+    // arrow function, toFixed(2) for 2 decimal places
     const calculateAverage = (total) => (total / 3).toFixed(2);
 
-    // Function: grade
+    // grade from total
     function getGrade(total) {
       if (total >= 80) return "A";
       if (total >= 70) return "B";
@@ -42,12 +42,13 @@
 
     const results = document.getElementById("results");
 
-    // forEach + object destructuring
+    // process each student
     students.forEach((student) => {
+      // object destructuring
       const { name, rollNumber, assignment, midterm, finalExam } = student;
 
       const total = calculateTotal(assignment, midterm, finalExam);
-      const status = total >= 50 ? "Passed" : "Failed"; // ternary operator
+      const status = total >= 50 ? "Passed" : "Failed"; // ternary, 50 is passing
 
       results.innerHTML += `
         <div class="col-md-4">
@@ -65,7 +66,7 @@
         </div>`;
     });
 
-    // for loop: count passed students
+    // for loop to count how many passed
     let passed = 0;
     for (let i = 0; i < students.length; i++) {
       const s = students[i];

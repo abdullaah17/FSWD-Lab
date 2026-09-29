@@ -13,7 +13,7 @@
   </div>
 
   <script>
-    // Store courses in an array
+    // courses array
     const courses = [
       "Web Development",
       "Database Systems",
@@ -23,14 +23,14 @@
       "Data Structures"
     ];
 
-    courses.push("Cloud Computing"); // push(): add a new course at the end
-    courses.pop();                   // pop(): removes "Cloud Computing"
-    courses.pop();                   // pop(): removes "Data Structures"
+    courses.push("Cloud Computing"); // adds at the end
+    courses.pop();                   // removes last one (Cloud Computing)
+    courses.pop();                   // removes Data Structures to match expected output
 
-    // includes(): check if a course exists
+    // true if AI is in the array
     const aiAvailable = courses.includes("Artificial Intelligence");
 
-    // Function: total registered courses (uses for...of)
+    // counts the courses using for...of
     function getTotalCourses(list) {
       let total = 0;
       for (const course of list) {
@@ -39,10 +39,10 @@
       return total;
     }
 
-    // Arrow function + ternary operator: Full-Time / Part-Time
+    // arrow function + ternary, 4 or more courses is full time
     const getStudentStatus = (total) => total >= 4 ? "Full-Time" : "Part-Time";
 
-    // forEach: display all courses
+    // forEach to show courses, index + 1 since index starts from 0
     let html = "<h4>Available Courses</h4>";
     courses.forEach((course, index) => {
       html += `${index + 1}. ${course}<br>`;

@@ -13,7 +13,7 @@
   </div>
 
   <script>
-    // Array of student objects
+    // array of objects (6 students)
     const students = [
       { name: "Ali", rollNumber: "BSCS-001", department: "Computer Science", semester: 6, cgpa: 3.45 },
       { name: "Sara", rollNumber: "BSCS-002", department: "Computer Science", semester: 4, cgpa: 2.75 },
@@ -23,23 +23,26 @@
       { name: "Ayesha", rollNumber: "BSAI-006", department: "Artificial Intelligence", semester: 2, cgpa: 2.6 }
     ];
 
-    // Function: academic status
+    // status according to cgpa
+    // return exits the function so only one status is given
     function getStatus(cgpa) {
       if (cgpa >= 3.0) return "Excellent";
       if (cgpa >= 2.5) return "Good";
       if (cgpa >= 2.0) return "Satisfactory";
-      return "Academic Warning";
+      return "Academic Warning"; // below 2.0
     }
 
-    // Arrow function + ternary operator: eligibility
+    // arrow function + ternary operator for eligibility
     const getEligibility = (cgpa) => cgpa >= 2.0 ? "Eligible" : "Not Eligible";
 
-    const container = document.getElementById("students");
+    const container = document.getElementById("students"); // div where cards go
 
-    // forEach + object destructuring
+    // loop through every student
     students.forEach((student) => {
+      // object destructuring
       const { name, rollNumber, department, semester, cgpa } = student;
 
+      // += so the previous cards dont get replaced
       container.innerHTML += `
         <div class="col-md-4">
           <div class="card p-3">
