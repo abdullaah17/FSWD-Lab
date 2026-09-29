@@ -3,47 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Registration System</title>
+  <title>Task 2 - Course Registration</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <span class="navbar-brand fw-bold">Lab 04</span>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#labNav" aria-controls="labNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="labNav">
-        <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="task1.html">Task 1: Student Management</a></li>
-        <li class="nav-item"><a class="nav-link active" aria-current="page" href="task2.html">Task 2: Course Registration</a></li>
-        <li class="nav-item"><a class="nav-link" href="task3.html">Task 3: Result Processing</a></li>
-        <li class="nav-item"><a class="nav-link" href="task4.html">Task 4: Performance Dashboard</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container py-5" style="max-width: 720px;">
-    <h1 class="text-center mb-2">Online Course Registration</h1>
-    <p class="text-center text-muted mb-4">Task 2 — Lab 04</p>
-
-    <div class="card shadow-sm mb-4">
-      <div class="card-header fw-bold">Operations</div>
-      <ul id="operations" class="list-group list-group-flush"></ul>
-    </div>
-
-    <div class="card shadow-sm mb-4">
-      <div class="card-header bg-primary text-white fw-bold">Available Courses</div>
-      <ol id="courseList" class="list-group list-group-flush list-group-numbered"></ol>
-    </div>
-
-    <div id="summary" class="card shadow-sm">
-      <div class="card-body"></div>
-    </div>
+  <div class="container py-4">
+    <h2 class="text-center mb-4">Online Course Registration System</h2>
+    <div id="output" class="card p-4 mx-auto" style="max-width: 500px;"></div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // Store courses in an array
     const courses = [
@@ -55,60 +23,38 @@
       "Data Structures"
     ];
 
-    const operations = document.getElementById("operations");
-    const courseList = document.getElementById("courseList");
-    const summary = document.querySelector("#summary .card-body");
+    courses.push("Cloud Computing"); // push(): add a new course at the end
+    courses.pop();                   // pop(): removes "Cloud Computing"
+    courses.pop();                   // pop(): removes "Data Structures"
 
-    const logOperation = (text) => {
-      operations.innerHTML += `<li class="list-group-item">${text}</li>`;
-    };
-
-    // Display the initial courses using a classic for loop
-    let initialList = "";
-    for (let i = 0; i < courses.length; i++) {
-      initialList += `${i + 1}. ${courses[i]}<br>`;
-    }
-    logOperation(`<strong>Initial courses (${courses.length}):</strong><br>${initialList}`);
-
-    // Add a new course using push()
-    courses.push("Cloud Computing");
-    logOperation(`<strong>push():</strong> Added "Cloud Computing" → ${courses.length} courses`);
-
-    // Remove the last course using pop()
-    const removedCourse = courses.pop();
-    logOperation(`<strong>pop():</strong> Removed "${removedCourse}" → ${courses.length} courses`);
-
-    // Remove "Data Structures" as well so the final list matches the expected output
-    const secondRemoved = courses.pop();
-    logOperation(`<strong>pop():</strong> Removed "${secondRemoved}" → ${courses.length} courses`);
-
-    // Check availability using includes()
+    // includes(): check if a course exists
     const aiAvailable = courses.includes("Artificial Intelligence");
 
-    // Function: total number of registered courses
-    function getTotalCourses(courseArray) {
-      return courseArray.length;
+    // Function: total registered courses (uses for...of)
+    function getTotalCourses(list) {
+      let total = 0;
+      for (const course of list) {
+        total++;
+      }
+      return total;
     }
 
-    // Arrow function + ternary: Full-Time (4 or more) / Part-Time (less than 4)
-    const getStudentStatus = (totalCourses) => (totalCourses >= 4 ? "Full-Time" : "Part-Time");
+    // Arrow function + ternary operator: Full-Time / Part-Time
+    const getStudentStatus = (total) => total >= 4 ? "Full-Time" : "Part-Time";
 
-    // Display final course list using for...of
-    for (const course of courses) {
-      courseList.innerHTML += `<li class="list-group-item">${course}</li>`;
-    }
-
-    // Build the summary using forEach()
-    const totalCourses = getTotalCourses(courses);
-    const summaryItems = [
-      ["Total Registered Courses", totalCourses],
-      ["Artificial Intelligence Available", aiAvailable ? "Yes" : "No"],
-      ["Student Status", getStudentStatus(totalCourses)]
-    ];
-
-    summaryItems.forEach(([label, value]) => {
-      summary.innerHTML += `<p class="mb-2"><strong>${label}:</strong> ${value}</p>`;
+    // forEach: display all courses
+    let html = "<h4>Available Courses</h4>";
+    courses.forEach((course, index) => {
+      html += `${index + 1}. ${course}<br>`;
     });
+
+    const total = getTotalCourses(courses);
+    html += `
+      <p class="mt-3 mb-1">Total Registered Courses: ${total}</p>
+      <p class="mb-1">Artificial Intelligence Available: ${aiAvailable ? "Yes" : "No"}</p>
+      <p class="mb-0">Student Status: ${getStudentStatus(total)}</p>`;
+
+    document.getElementById("output").innerHTML = html;
   </script>
 </body>
 </html>
