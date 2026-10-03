@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 05 - ES6, Modules and Async JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .output-box { min-height: 3rem; font-family: monospace; white-space: pre-wrap; }
+  </style>
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <span class="navbar-brand">Full Stack Lab 05</span>
+      <div class="d-flex gap-3 small">
+        <a class="link-light" href="#task1">Task 1</a>
+        <a class="link-light" href="#task2">Task 2</a>
+        <a class="link-light" href="#task3">Task 3</a>
+        <a class="link-light" href="#task4">Task 4</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <h2 class="text-center mb-4">Lab 05 - ES6 Features, Modules, Callbacks, Promises and Async/Await</h2>
+
+    <!-- TASK 1 -->
+    <section id="task1" class="mb-5">
+      <h3>Task 1 - University Course Enrollment Manager</h3>
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">Spread, Rest and Default Parameters</div>
+        <div id="task1Output" class="card-body"></div>
+      </div>
+    </section>
+
+    <!-- TASK 2 -->
+    <section id="task2" class="mb-5">
+      <h3>Task 2 - Student Utility Module</h3>
+      <h5 id="task2Department" class="text-primary mb-3"></h5>
+      <div id="task2Cards" class="row g-3"></div>
+    </section>
+
+    <!-- TASK 3 -->
+    <section id="task3" class="mb-5">
+      <h3>Task 3 - Online Examination Workflow</h3>
+
+      <div class="card shadow-sm mb-3">
+        <div class="card-header">Part A - Nested Callbacks</div>
+        <div class="card-body">
+          <button id="runPartA" class="btn btn-primary btn-sm mb-2">Start Exam</button>
+          <div id="task3PartA" class="output-box"></div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-header">Part B - Error-First (valid roll number)</div>
+            <div class="card-body">
+              <button id="runValid" class="btn btn-success btn-sm mb-2">Run with BSCS-001</button>
+              <div id="task3Valid" class="output-box"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-header">Part B - Error-First (empty roll number)</div>
+            <div class="card-body">
+              <button id="runEmpty" class="btn btn-danger btn-sm mb-2">Run with empty roll</button>
+              <div id="task3Empty" class="output-box"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASK 4 -->
+    <section id="task4" class="mb-5">
+      <h3>Task 4 - University Result Portal</h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-header">Part A - Promise Chain (BSCS-001)</div>
+            <div id="task4PartA" class="card-body"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-header">Part B &amp; C - Search with Async/Await</div>
+            <div class="card-body">
+              <form id="searchForm" class="d-flex gap-2 mb-2">
+                <label for="rollInput" class="visually-hidden">Roll number</label>
+                <input id="rollInput" class="form-control" placeholder="e.g. BSCS-001" autocomplete="off">
+                <button id="searchBtn" type="submit" class="btn btn-primary">Search</button>
+              </form>
+              <div id="searchResult"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          Part D - All Results (Promise.all)
+          <button id="loadAllBtn" class="btn btn-dark btn-sm">Load All Results</button>
+        </div>
+        <div class="card-body">
+          <div id="allResults" class="row g-3 mb-3"></div>
+          <div id="allStats"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- type="module" is needed for import/export (run with Live Server) -->
+  <script type="module" src="lab05.js"></script>
+</body>
+</html>
