@@ -1,0 +1,536 @@
+{
+  "info": {
+    "name": "Lab 07 - Students & Books API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "studentUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "bookUrl",
+      "value": "http://localhost:3001"
+    }
+  ],
+  "item": [
+    {
+      "name": "Students API (port 3000)",
+      "item": [
+        {
+          "name": "GET all students",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{studentUrl}}/students",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET student 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{studentUrl}}/students/1",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET missing student (404)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{studentUrl}}/students/100",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "100"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST create student (201)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{studentUrl}}/students",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hassan\",\n  \"department\": \"BSCS\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST missing name (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{studentUrl}}/students",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"department\": \"BSCS\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST empty name (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{studentUrl}}/students",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"department\": \"BSCS\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST missing department (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{studentUrl}}/students",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hassan\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT update student 4",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{studentUrl}}/students/4",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "4"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hassan Khan\",\n  \"department\": \"BSIT\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT invalid body (400)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{studentUrl}}/students/4",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "4"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"department\": \"BSIT\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE student 4",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{studentUrl}}/students/4",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "4"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE missing student (404)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{studentUrl}}/students/100",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "100"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET department BSCS",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{studentUrl}}/students/department/BSCS",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "department",
+                "BSCS"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET department BSIT",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{studentUrl}}/students/department/BSIT",
+              "host": [
+                "{{studentUrl}}"
+              ],
+              "path": [
+                "students",
+                "department",
+                "BSIT"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Books API (port 3001)",
+      "item": [
+        {
+          "name": "GET all books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{bookUrl}}/books",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET book 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{bookUrl}}/books/1",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET missing book (404)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{bookUrl}}/books/99",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books",
+                "99"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST create book (201)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{bookUrl}}/books",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"You Don't Know JS\",\n  \"author\": \"Kyle Simpson\",\n  \"price\": 1800\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST invalid price (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{bookUrl}}/books",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Test\",\n  \"author\": \"Someone\",\n  \"price\": \"cheap\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT update book 5",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{bookUrl}}/books/5",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books",
+                "5"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"You Don't Know JS Yet\",\n  \"author\": \"Kyle Simpson\",\n  \"price\": 2000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT missing book (404)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{bookUrl}}/books/99",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books",
+                "99"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"A\",\n  \"author\": \"B\",\n  \"price\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE book 5",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{bookUrl}}/books/5",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books",
+                "5"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE missing book (404)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{bookUrl}}/books/99",
+              "host": [
+                "{{bookUrl}}"
+              ],
+              "path": [
+                "books",
+                "99"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

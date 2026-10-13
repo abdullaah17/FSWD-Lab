@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Usman Tariq", "position": "Developer", "salary": 120000 },
+  { "id": 2, "name": "Ayesha Khan", "position": "Designer", "salary": 95000 },
+  { "id": 3, "name": "Bilal Ahmed", "position": "QA Engineer", "salary": 85000 },
+  { "id": 4, "name": "Fatima Noor", "position": "Project Manager", "salary": 150000 },
+  { "id": 5, "name": "Hamza Ali", "position": "DevOps Engineer", "salary": 130000 }
+]

@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "Introduction to Programming", "author": "John Smith", "price": 1500 },
+  { "id": 2, "title": "Clean Code", "author": "Robert C. Martin", "price": 2800 },
+  { "id": 3, "title": "Eloquent JavaScript", "author": "Marijn Haverbeke", "price": 2200 },
+  { "id": 4, "title": "Node.js Design Patterns", "author": "Mario Casciaro", "price": 3500 }
+]
